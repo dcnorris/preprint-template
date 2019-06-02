@@ -1,0 +1,44 @@
+---
+title: "Title defined in YAML header"
+author:
+- no: 1
+  name: You R. Here
+  affil: Your Affiliation
+  email: you@email.com
+- no: 2
+  name: A. Second Author
+  affil: University of Somewhere
+bibliography:
+- zipfR.bib
+abstract: |
+  **Background:** This is an ABSTRACT defined in the YAML header,
+  using a literally-interpreted indented block.
+  
+  **Aims:** The abstract can be structured, as you see.
+documentclass: wlpeerj
+classoption: fleqn,10pt #,lineno
+geometry: left=5cm,right=2cm,top=2.25cm,bottom=2.25cm,headheight=12pt,letterpaper
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_height: 4
+    fig_width: 6.5
+    keep_tex: yes
+    template: peerj.latex
+  html_document:
+    df_print: paged
+header-includes:
+- \usepackage{setspace,relsize}
+- \usepackage[autosize,dot]{dot2texi}
+- \usepackage{tikz}
+keywords:
+- Example
+- sharing
+- preprints
+---
+
+# Introduction
+
+This is just a little bit of the body. Let me cite [@zipfR], for example.
+
+# References

@@ -1,0 +1,113 @@
+\documentclass[fleqn,10pt]{wlpeerj}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[left=5cm,right=2cm,top=2.25cm,bottom=2.25cm,headheight=12pt,letterpaper]{geometry}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Title defined in YAML header},
+            pdfkeywords={Example, sharing, preprints},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{setspace,relsize}
+\usepackage[autosize,dot]{dot2texi}
+\usepackage{tikz}
+
+\title{Title defined in YAML header}
+
+  %
+    \author[1]{You R. Here}
+    \affil[1]{Your Affiliation}
+    %
+      \corrauthor[1]{You R. Here}{\href{mailto:you@email.com}{\nolinkurl{you@email.com}}}
+    
+  %
+    \author[2]{A. Second Author}
+    \affil[2]{University of Somewhere}
+    
+  
+
+\begin{abstract}
+\textbf{Background:} This is an ABSTRACT defined in the YAML header,
+using a literally-interpreted indented block.
+
+\textbf{Aims:} The abstract can be structured, as you see.
+\end{abstract}
+
+\newcommand{\pjbibliography}{\small\bibliographystyle{unsrtnat}%
+\bibliography{zipfR.bib}%
+\label{endmain}%
+}
+
+\begin{document}
+\flushbottom
+\thispagestyle{empty}
+\maketitle
+
+\subsection*{Keywords}\label{keywords}
+Example, sharing, preprints
+
+\rfoot{\small\sffamily\bfseries\thepage/\pageref{endmain}}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+This is just a little bit of the body. Let me cite (Evert and Baroni
+2007), for example.
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-zipfR}{}%
+Evert, Stefan, and Marco Baroni. 2007. ``\emph{zipfR}: Word Frequency
+Distributions in R.'' In \emph{Proceedings of the 45th Annual Meeting of
+the Association for Computational Linguistics, Posters and
+Demonstrations Sessions}, 29--32. Prague, Czech Republic.
+
+\end{document}
